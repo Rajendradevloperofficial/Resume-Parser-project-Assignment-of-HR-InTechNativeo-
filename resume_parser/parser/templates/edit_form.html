@@ -1,0 +1,51 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Extracted Data</title>
+    
+</head>
+<body>
+
+    <div class="container">
+        <h1>Edit Extracted Data</h1>
+        <form method="POST" action="{% url 'save_data' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" value="{{ data.name }}">
+            </div>
+            <div class="form-group">
+                <label for="education">Education:</label>
+                <input type="text" id="education" name="education" value="{{ data.education }}">
+            </div>
+            <div class="form-group">
+                <label for="experience">Experience:</label>
+                <input type="text" id="experience" name="experience" value="{{ data.experience }}">
+            </div>
+            <div class="form-group" >
+                <label for="skills">Skills:</label>
+                <input type="text" id="skills" name="skills" value="{{ data.skills }}">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" value="{{ data.email }}">
+            </div>
+            <div class="form-group">
+                <label for="contact_number">Contact Number:</label>
+                <input type="text" id="contact_number" name="contact_number" value="{{ data.contact_number }}">
+            </div>
+            <div class="form-group">
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" value="{{ data.location }}">
+            </div>
+            <button type="submit">Save Changes</button>
+        </form>
+    </div>
+
+</body>
+</html>

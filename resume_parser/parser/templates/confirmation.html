@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Saved</title>
+    
+</head>
+<body>
+    <div class="container">
+        <h2>Data Saved Successfully!</h2>
+        <div class="field">
+            <p><strong>Name:</strong> {{ data.name }}</p>
+        </div>
+        <div class="field">
+            <p><strong>Email:</strong> {{ data.email }}</p>
+        </div>
+        <div class="field">
+            <p><strong>Contact Number:</strong> {{ data.contact_number }}</p>
+        </div>
+        <div class="field">
+            <p><strong>Location:</strong> {{ data.location }}</p>
+        </div>
+        <div class="field">
+            <p><strong>Education:</strong> {{ data.education }}</p>
+        </div>
+        <div class="field">
+            <p><strong>Experience:</strong> {{ data.experience }}</p>
+        </div>
+        <div class="field">
+            <p><strong>Skills:</strong> {{ data.skills }}</p>
+        </div>
+        <a href="{% url 'upload_resume' %}">Upload Another Resume</a>
+    </div>
+</body>
+</html>
